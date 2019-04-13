@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Todo list</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <!-- my styles -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container vertical-center h-100">
+        <div class="row align-items-center h-100">
+            <div class="col-6 mx-auto">
+                <div class="card">
+                    <div class="card-header text-center">
+                        WHAT DO YOU WANT TO DO TODAY?
+                    </div>
+                    <div class="card-body">
+
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Enter todo e.g. Play with cat"
+                                   aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-secondary" type="button" id="button-addon2">Add
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="">
+                            <button class="btn btn-secondary delete" type="submit">
+                                <span class="glyphicon glyphicon-trash"></span>DELETE COMPLETED
+                            </button>
+                            <button class="btn btn-secondary delete" type="submit">
+                                <span class="glyphicon glyphicon-trash"></span>DELETE ALL
+                            </button>
+                        </div>
+
+                        <div class="list-group mt-3">
+                            <a href="#" class="list-group-item list-group-item-action">Todo one</a>
+                            <a href="#" class="list-group-item list-group-item-action">Todo two</a>
+                            <a href="#" class="list-group-item list-group-item-action">Todo three</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+html, body{
+    height:100%;
+    margin:0;
+    padding:0;
+    background: #a3a3c2;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.card {
+    background: #fff7e6;
+}
+
+.btn-secondary {
+    background-color: #c2c2d6 !important;
+    border: 0 none;
+}
+
+.btn-secondary:hover {
+  background-color: #b3b3cc !important;
+}
+
+.delete {
+    background-color: #ffbf00 !important;
+}
+
+.delete:hover {
+  background-color: #e6ac00 !important;
+}
