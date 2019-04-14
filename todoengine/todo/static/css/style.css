@@ -26,3 +26,12 @@ html, body{
 .delete:hover {
   background-color: #e6ac00 !important;
 }
+
+.todo-completed {
+    text-decoration: line-through;
+    background: rgba(149, 165, 166, 0.3);
+}
+
+.list-group-item {
+color: black;
+}

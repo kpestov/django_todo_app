@@ -15,3 +15,6 @@ class TodoForm(forms.ModelForm):
         widgets = {
             'title': forms.TextInput(attrs=attrs)
         }
+
+
+

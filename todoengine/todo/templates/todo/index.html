@@ -34,7 +34,7 @@
                     </div>
                     <div class="card-body">
 
-                        <form action="" method="post">
+                        <form action="{% url 'todo_list_url' %}" method="post">
 
                             {% csrf_token %}
 
@@ -60,19 +60,25 @@
                         </form>
 
                         <div class="">
-                            <button class="btn btn-secondary delete" type="submit">
+                            <a href="{% url 'delete_completed_url' %}"><button class="btn btn-secondary delete" type="submit">
                                 <span class="glyphicon glyphicon-trash"></span>DELETE COMPLETED
-                            </button>
-                            <button class="btn btn-secondary delete" type="submit">
+                            </button></a>
+                            <a href="{% url 'delete_all_url' %}"><button class="btn btn-secondary delete">
                                 <span class="glyphicon glyphicon-trash"></span>DELETE ALL
-                            </button>
+                            </button></a>
                         </div>
 
-                        <div class="list-group mt-3">
+                        <ul class="list-group mt-3">
                             {% for task in tasks %}
-                              <a href="#" class="list-group-item list-group-item-action">{{ task.title }}</a>
+
+                                {% if task.complete %}
+                                  <li class="list-group-item todo-completed">{{ task.title }}</li>
+                                {% else %}
+                                  <a href="{% url 'todo_completed_url' task.id %}"><li class="list-group-item">{{ task.title }}</li></a>
+                                {% endif %}
+
                             {% endfor %}
-                        </div>
+                        </ul>
 
                     </div>
                 </div>
