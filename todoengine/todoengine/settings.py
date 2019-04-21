@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from .config import DATABASE_CONFIG, SECRET_KEY
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '-%@h774vxb$xq9f$*7swvb%x-4o$0sp%3@$u+%peh(#xt19e5s'
+SECRET_KEY = SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -84,13 +85,13 @@ WSGI_APPLICATION = 'todoengine.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'todo_list',
-        'USER': 'kirill',
-        'PASSWORD': 'pinkfloyd1951',
-        'PORT': '',
-        'HOST': 'localhost',
-        'OPTIONS': {'charset': 'utf8'},
+        'ENGINE': DATABASE_CONFIG['ENGINE'],
+        'NAME': DATABASE_CONFIG['NAME'],
+        'USER': DATABASE_CONFIG['USER'],
+        'PASSWORD': DATABASE_CONFIG['PASSWORD'],
+        'PORT': DATABASE_CONFIG['PORT'],
+        'HOST': DATABASE_CONFIG['HOST'],
+        'OPTIONS': DATABASE_CONFIG['OPTIONS'],
     }
 }
 
@@ -131,3 +132,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'kpestov91@gmail.com'
+EMAIL_HOST_PASSWORD = 'Ft28021-28081991'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

@@ -11,12 +11,12 @@ html, body{
 }
 
 .btn-secondary {
-    background-color: #c2c2d6 !important;
+    background-color: #59b300 !important;
     border: 0 none;
 }
 
 .btn-secondary:hover {
-  background-color: #b3b3cc !important;
+  background-color: #66cc00 !important;
 }
 
 .delete {

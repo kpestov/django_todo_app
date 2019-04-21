@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views import View
 from django.shortcuts import redirect
+from django.core.mail import send_mail, BadHeaderError
+from django.http import HttpResponse
 
 from .forms import TodoForm
 from .models import Todo
@@ -36,3 +38,27 @@ def delete_completed(request):
 def delete_all(request):
     Todo.objects.all().delete()
     return redirect('todo_list_url')
+
+
+def send_list(request):
+    tasks = Todo.objects.filter(complete=False)
+
+    subject = 'Todo list'
+    message = '\n'.join(['-' + i.title for i in tasks])
+    from_email = 'kpestov91@gmail.com'
+    recepients = ['kpestov91@gmail.com']
+
+    try:
+        send_mail(
+            subject,
+            message,
+            from_email,
+            recepients,
+        )
+
+    except BadHeaderError:
+        return HttpResponse('Invalid header found.')
+    return redirect('todo_list_url')
+
+
+
